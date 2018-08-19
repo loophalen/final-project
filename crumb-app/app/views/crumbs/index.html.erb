@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crumbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Crumb</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crumbs.each do |crumb| %>
+      <tr>
+        <td><%= crumb.crumb %></td>
+        <td><%= link_to 'Show', crumb %></td>
+        <td><%= link_to 'Edit', edit_crumb_path(crumb) %></td>
+        <td><%= link_to 'Destroy', crumb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crumb', new_crumb_path %>

@@ -1,0 +1,22 @@
+<%= form_with(model: crumb, local: true) do |form| %>
+  <% if crumb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(crumb.errors.count, "error") %> prohibited this crumb from being saved:</h2>
+
+      <ul>
+      <% crumb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :crumb %>
+    <%= form.text_area :crumb %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
